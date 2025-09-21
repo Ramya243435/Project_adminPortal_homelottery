@@ -63,9 +63,9 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="h-screen bg-gray-50 flex overflow-hidden">
       {/* Sidebar */}
-      <div className="w-64 bg-gray-900 text-white flex-shrink-0">
+      <div className="w-64 bg-gray-900 text-white flex-shrink-0 flex flex-col">
         <div className="p-6">
           <div className="flex items-center space-x-3">
             <Trophy className="h-8 w-8 text-blue-400" />
@@ -76,7 +76,7 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
         
-        <nav className="mt-8">
+        <nav className="mt-8 flex-1 overflow-y-auto">
           {navigation.map((item) => {
             const Icon = item.icon;
             return (
@@ -94,7 +94,7 @@ const AdminDashboard: React.FC = () => {
           })}
         </nav>
 
-        <div className="absolute bottom-0 w-64 p-6 border-t border-gray-700">
+        <div className="p-6 border-t border-gray-700 mt-auto">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
               <UserCheck className="h-4 w-4" />
@@ -108,7 +108,7 @@ const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
         <header className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
           <div className="flex items-center justify-between">
@@ -130,7 +130,7 @@ const AdminDashboard: React.FC = () => {
         </header>
 
         {/* Content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 overflow-y-auto">
           {renderContent()}
         </main>
       </div>
